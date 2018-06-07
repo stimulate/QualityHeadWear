@@ -1,6 +1,9 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <body>
+@extends('welcome')
+
+@section('nice')
+nice
+@endsection
+
 <div class="row">
     <div class="col-md-4" style="font-size:20px">
         <img src="resources/assets/images/capman.gif" alt="" />
@@ -43,6 +46,3 @@
     </div>
 
 
-    </body>
-
-</html>
