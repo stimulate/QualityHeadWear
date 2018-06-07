@@ -17,7 +17,7 @@ class CreateCapsTable extends Migration
             $table->increments('CapID');
             $table->string('name',50);
             $table->string('description');
-            $table->blob('image');
+            $table->string('image');
             $table->double('price');
             $table->integer('CategoryID')->unsigned()->index(); 
             $table->timestamps();
