@@ -1,12 +1,11 @@
-@extends('welcome')
+@extends('layout')
 
-@section('nice')
-nice
-@endsection
+@section('title', 'About')
 
+@section('content')
 <div class="row">
     <div class="col-md-4" style="font-size:20px">
-        <img src="resources/assets/images/capman.gif" alt="" />
+        <img src="/images/capman.gif" alt="" />
         <h2>Welcome to Quality Cap</h2>
         <p>
             Quality Cap is an Ecommerce website, a online store for Caps.
@@ -27,16 +26,16 @@ nice
         <p>You are welcome to send us any enquiries. You will be taken good care of by our online shop attendant</p>
     </div>
     <div class="col-md-4">
-        <img src="resources/assets/images/mag3.jpg" alt="mag" style="margin-top:45px;width:440px;" />
+        <img src="/images/mag1.jpg" alt="mag" style="margin-top:45px;width:440px;" />
         
     </div>
     </div>>
     <div class="row">
         <div class="col-md-4">
-            <img src="resources/assets/images/mag1.jpg" alt="mag" style="margin:0px;width:380px;height:262px" />
+            <img src="/images/mag1.jpg" alt="mag" style="margin:0px;width:380px;height:262px" />
         </div>
         <div class="col-md-4">
-            <img src="resources/assets/images/mag2.jpeg" alt="mag" style="margin:0px;width:380px;height:262px" />
+            <img src="/images/mag2.jpeg" alt="mag" style="margin:0px;width:380px;height:262px" />
         </div>
         <div class="col-md-4"style="font-size:20px">
             <h2>Start shopping</h2>
@@ -44,5 +43,5 @@ nice
             <p>Show your good taste and unique style by a CAP</p>
         </div>
     </div>
-
+    @endsection
 

@@ -14,12 +14,13 @@ class CreateCapsTable extends Migration
     public function up()
     {
         Schema::create('caps', function (Blueprint $table) {
-            $table->increments('CapID');
+            $table->increments('capID');
             $table->string('name',50);
             $table->string('description');
             $table->string('image');
             $table->double('price');
-            $table->integer('CategoryID')->unsigned()->index(); 
+            $table->integer('categoryID')->unsigned()->index(); 
+            $table->integer('supplierID')->unsigned()->index(); 
             $table->timestamps();
         });
     }

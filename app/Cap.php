@@ -10,4 +10,8 @@ class Cap extends Model
     {
        return $this->belongsTo('App\Category');  
     }
+    public function supplier()
+    {
+       return $this->belongsTo('App\Category');  
+    }
 }
