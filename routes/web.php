@@ -10,19 +10,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'HomeController@index');
+Route::get('/index', 'HomeController@index');
+Route::get('/about', 'HomeController@about');
+Route::get('/contact', 'HomeController@contact');
+Route::get('/caps', 'CapController@index');
+Route::get('/layout', function () {
+    return view('layout');
+});
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
-Route::get('/home', function () {
-    return view('home');
-});
+Route::resources([ 'caps' => 'CapController', 
+                   'categories' => 'CategoryController',
+                   'suppliers' => 'SupplierController' ]);
 
 Route::group(['middleware' =>['web']],function(){
     Route::get('/test',function(){

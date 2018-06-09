@@ -14,14 +14,19 @@ class CreateCapsTable extends Migration
     public function up()
     {
         Schema::create('caps', function (Blueprint $table) {
-            $table->increments('capID');
+            
+            $table->increments('id');
             $table->string('name',50);
-            $table->string('description');
+            $table->text('description');
             $table->string('image');
             $table->double('price');
-            $table->integer('categoryID')->unsigned()->index(); 
-            $table->integer('supplierID')->unsigned()->index(); 
-            $table->timestamps();
+            $table->integer('category_id')->unsigned();            
+            $table->integer('supplier_id')->unsigned();            
+            
+        });
+        Schema::table('caps', function ($table) {            
+            $table->foreign('category_id')->references('id')->on('categories');            
+            $table->foreign('supplier_id')->references('id')->on('suppliers');            
         });
     }
 
@@ -32,6 +37,10 @@ class CreateCapsTable extends Migration
      */
     public function down()
     {
+        Schema::table('caps', function ($table) {
+            $table->dropForeign(['category_id']);
+            $table->dropForeign(['supplier_id']);
+    });        
         Schema::dropIfExists('caps');
     }
 }

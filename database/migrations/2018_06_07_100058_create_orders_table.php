@@ -16,7 +16,8 @@ class CreateOrdersTable extends Migration
     {        
         Schema::getConnection()->getDoctrineSchemaManager()->getDatabasePlatform()->registerDoctrineTypeMapping('enum', 'string');  
         Schema::create('orders', function (Blueprint $table) {
-            $table->increments('orderID');
+           
+            $table->increments('id');
             $table->string('firstName');
             $table->string('lastName');
             $table->string('address');
@@ -28,9 +29,12 @@ class CreateOrdersTable extends Migration
             $table->double('subtotal');
             $table->double('gst');
             $table->double('grandtotal');
-            $table->enum('status', array('pending','paid','shipped'))->nullable()->change();            
-            $table->integer('id')->unsigned()->index();
+            $table->enum('status', ['pending','paid','shipped'])->nullable();            
+            $table->integer('user_id')->unsigned()->index();            
             $table->timestamps();
+        });
+        Schema::table('orders', function ($table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -41,6 +45,9 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
+        Schema::table('orders', function ($table) {
+            $table->dropForeign(['user_id']);
+    });
         Schema::dropIfExists('orders');
     }
 }
