@@ -22,7 +22,7 @@ class CreateCapsTable extends Migration
             $table->double('price');
             $table->integer('category_id')->unsigned();            
             $table->integer('supplier_id')->unsigned();            
-            
+            $table->timestamps();
         });
         Schema::table('caps', function ($table) {            
             $table->foreign('category_id')->references('id')->on('categories');            
