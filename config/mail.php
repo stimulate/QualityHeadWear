@@ -29,7 +29,8 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    //'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.mailtrap.io'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +43,8 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
+   // 'port' => env('MAIL_PORT', 587),
+    'port' => env('MAIL_PORT', 2525),
 
     /*
     |--------------------------------------------------------------------------
@@ -100,7 +102,14 @@ return [
     */
 
     'sendmail' => '/usr/sbin/sendmail -bs',
-
+    
+    // 'stream' => [
+    //     'ssl' => [
+    //         'allow_self_signed' => true,
+    //         'verify_peer' => false,
+    //         'verify_peer_name' => false,
+    //     ],
+    // ],
     /*
     |--------------------------------------------------------------------------
     | Markdown Mail Settings
@@ -111,7 +120,8 @@ return [
     | of the emails. Or, you may simply stick with the Laravel defaults!
     |
     */
-
+    "pretend" => false,
+    
     'markdown' => [
         'theme' => 'default',
 
