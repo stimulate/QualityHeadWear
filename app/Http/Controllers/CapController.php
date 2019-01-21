@@ -34,7 +34,7 @@ class CapController extends Controller
         {              
             return view('caps.user_index', compact('caps','caps0','category','sort'));
         }
-        return view('caps.index', compact('caps','caps0','sort'));
+        return view('caps.index', compact('caps','caps0','category','sort'));
     }
     
     /**
@@ -70,6 +70,7 @@ class CapController extends Controller
         $pic = request('image');
         if(!empty($pic))
         { 
+            //$picPath = __DIR__.'/../../..'.'/public/images/cap/'.basename($pic).'.jpeg';            
             $picPath = __DIR__.'/../../..'.'/public/images/cap/'.basename($pic).'.jpeg';            
             move_uploaded_file($pic, $picPath);
         }

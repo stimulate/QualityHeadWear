@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout/layout')
 
 @section('title', 'Cap')
 
@@ -27,7 +27,7 @@
                 </div>
                 <ul class="list-group list-unstyled">
                     <li><a  class="list-group-item">All</a></li>
-                    @foreach ($caps0 as $c)
+                    @foreach ($category as $c)
                     {
                         <li class="ca"><a href="{{route('member_sort', $c->category)}}" class="list-group-item">{{$caps0->category->name}}</a></li>
                     }     
@@ -42,7 +42,7 @@
                     {                        
                         <div class="col-md-4 col-sm-6" style="margin-top:30px;">
                             <span class="thumbnail">
-                                <img style="width: 100%;height:250px;" src="{{$c->image}}" alt="Image" onerror="this.onerror = null;">
+                                <img style="width: 100%;height:250px;" src=.{{$c->image}} alt="Image" onerror="this.onerror = null;">
                                 <h4 id="productTitle">{{$c->name}}</h4>
                                 <div style="width:100%;height:80px;">{{$c->description}}</div>
                                 <hr>

@@ -11,6 +11,7 @@
 |
 */
 Route::get('/', 'HomeController@index');
+Route::get('/Home', 'HomeController@index')->name('home');
 Route::get('/index', 'HomeController@index');
 Route::get('/Home/index', 'HomeController@index')->name('index');
 Route::get('/Home/about', 'HomeController@about')->name('about');
@@ -62,7 +63,7 @@ Auth::routes();
 Route::get('/register/verify', 'Auth\RegisterController@verify')->name('verifyEmailLink');
 Route::get('/register/verify/resend', 'Auth\RegisterController@showResendVerificationEmailForm')->name('showResendVerificationEmailForm');
 Route::post('/register/verify/resend', 'Auth\RegisterController@resendVerificationEmail')->name('resendVerificationEmail');
-Route::get('/Home', 'HomeController@index')->name('home');
+
 
 
 Route::group(['prefix' => 'admin'], function () {

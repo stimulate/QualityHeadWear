@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout/layout')
 
 @section('title', 'Caps')
 
@@ -53,7 +53,7 @@
                 {{$c ->price}}
             </td>
             <td>
-                <img style="width: 200px; height: 200px;" src="{{$c ->image}}" alt="Cap Image" />
+                <img style="width: 200px; height: 200px;" src=.{{$c ->image}} alt="Cap Image" />
             </td>
             <td>
                 {{$c ->description}}

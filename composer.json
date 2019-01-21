@@ -9,6 +9,7 @@
     "type": "project",
     "require": {
         "php": "^7.1.3",
+        "bread-templates": "^1.0",
         "doctrine/dbal": "^2.7",
         "fideloper/proxy": "^4.0",
         "gloudemans/shoppingcart": "^2.5",

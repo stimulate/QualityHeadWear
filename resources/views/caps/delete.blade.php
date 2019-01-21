@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout/layout')
 
 @section('title', 'Edit')
 
@@ -27,7 +27,7 @@
             Image
         </dt>
         <dd>
-            <img style="width: 250px; height: 250px;" src={{$cap->image}} alt="Image"/>
+            <img style="width: 250px; height: 250px;" src=.{{$cap->image}} alt="Image"/>
         </dd>
         <dt>
             Price

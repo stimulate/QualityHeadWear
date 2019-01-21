@@ -14,14 +14,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('Home/index');
+        return view('Home.index');
     }
     public function contact()
     {
-        return view('Home/contact');
+        return view('Home.contact');
     }
     public function about()
     {
-        return view('Home/about');
+        return view('Home.about');
     }
 }
